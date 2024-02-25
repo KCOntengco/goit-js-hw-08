@@ -12,10 +12,10 @@
     "url": "git+https://github.com/kcontengco/goit-js-hw-08.git"
   },
   "keywords": [],
-  "author": "Emerson <e.bacani@ph.goit.global>",
+  "author": "Kristine Pasco <tinontengco@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goit-emrsnbcn/goit-js-hw-08/issues"
+    "url": "https://github.com/kcontengco/goit-js-hw-08/issues"
   },
   "dependencies": {
     "@vimeo/player": "^2.21.0",
