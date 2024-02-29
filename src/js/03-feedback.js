@@ -1,6 +1,7 @@
 import throttle from 'lodash.throttle';
 
 const form = document.querySelector('form.feedback-form');
+
 const emailEl = document.querySelector('label [name="email"]');
 const messageEl = document.querySelector('label [name="message"]');
 
@@ -25,7 +26,7 @@ onPageReload();
 function onPageReload() {
   const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY)); // "{email, message}"
   if (savedMessage) {
-    emailEl.value = savedMessage.email;
+    emailEl.value = savedMessage.email; 
     messageEl.value = savedMessage.message;
   }
 }
