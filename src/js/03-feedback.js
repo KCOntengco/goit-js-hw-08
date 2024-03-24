@@ -1,7 +1,6 @@
 import throttle from 'lodash.throttle';
 
 const form = document.querySelector('form.feedback-form');
-
 const emailEl = document.querySelector('label [name="email"]');
 const messageEl = document.querySelector('label [name="message"]');
 
@@ -24,28 +23,34 @@ function onFormInput() {
 onPageReload();
 
 function onPageReload() {
-  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY)); // "{email, message}"
+  const savedMessage = JSON.parse(localStorage.getItem(STORAGE_KEY));
+
   if (savedMessage) {
-    emailEl.value = savedMessage.email; 
+    emailEl.value = savedMessage.email;
     messageEl.value = savedMessage.message;
   }
 }
 
 form.addEventListener('submit', onFormSubmit);
 
-function onFormSubmit(e) {
-  e.preventDefault(); //Prevent reloading the page on form submit
+function onFormSubmit(event) {
+  event.preventDefault();
+
   const email = emailEl.value;
   const message = messageEl.value;
 
   if (email == '' || message == '') {
     alert('Enter both input parameters!');
     form.reset();
-    return;
+    return false;
   }
 
-  const formData = { email, message };
+  const formData = {
+    email,
+    message,
+  };
   console.log(formData);
+
   form.reset();
 
   localStorage.removeItem(STORAGE_KEY);
